@@ -11,3 +11,46 @@
     margin: 0 0 5px 0;
     color: #333;
 }
+/* Flexbox layout styling */
+
+/* 1. Make <body> a flex container with column direction */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+}
+
+/* 2. Make <main> a flex container with row direction */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* Let it grow and fill available space */
+}
+
+/* 3. <article> should take 2/3 of the width */
+article {
+    flex: 2;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+/* 4. <aside> should take 1/3 of the width */
+aside {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Optional: Basic layout styles for visual clarity */
+header, footer {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+}
