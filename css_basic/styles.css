@@ -1,0 +1,13 @@
+
+.tweet {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.tweet h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
