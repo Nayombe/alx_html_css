@@ -1,211 +1,122 @@
-/* Reset & and Global Styles */
- {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-      background: #000;
-    }
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-      position: absolute;
-      width: 100%;
-      z-index: 10;
-    }
+.navbar .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
 
-    .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
 
-    nav a {
-      margin-left: 2rem;
-      text-decoration: none;
-      color: white;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-    }
+.navbar nav a:hover {
+  text-decoration: underline;
+}
 
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
-        url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+/* Hero Section */
+.hero {
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
 
-    .hero h1 {
-      font-size: 4rem;
-      font-weight: 700;
-    }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
 
-    .hero p {
-      margin: 1rem 0;
-      letter-spacing: 2px;
-      font-weight: 400;
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 
-    .hero button {
-      background-color: #a55eea;
-      color: white;
-      border: none;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
 
-    .testimonials {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.9), #000);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
+.hero .tags {
+  margin: 15px 0;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
 
-    .testimonials h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: #b388ff;
-    }
+.cta-btn {
+  background: #ff4edc;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-    .profiles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
+.sub-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #c6a8ff;
+}
 
-    .profile {
-      max-width: 180px;
-      text-align: center;
-    }
+/* Profiles Section */
+.profiles {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  background: #08152c;
+  padding: 50px 20px;
+}
 
-    .profile img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+.profile-card {
+  text-align: center;
+  max-width: 150px;
+}
 
-    .profile h3 {
-      font-size: 1rem;
-      margin: 0.5rem 0 0.2rem;
-    }
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
 
-    .profile p {
-      font-size: 0.8rem;
-      color: #ccc;
-    }
+.profile-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
 
-<!-- Testimonial Section -->
-<section style="background-color: #a55eea; color: white; text-align: center; padding: 3rem 1rem;">
-  <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="testimonial" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;" />
-  <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem;">
-    « Those tutorials are concise and go straight to the point. I can’t think of a better place to learn smiling. And it’s so fun! »
-  </p>
-  <p style="font-weight: bold; margin-top: 1rem;">Person Name</p>
-  <p style="font-style: italic;">weather presenter</p>
-</section>
+.profile-card p {
+  font-size: 14px;
+  color: #ccc;
+}
 
-<!-- Popular Tutorials Section -->
-<section style="padding: 4rem 2rem; background-color: #fff; text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 3rem;">
-    Most <span style="color: #a55eea;">popular</span> tutorials
-  </h2>
-
-  <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-
-    <!-- Tutorial Card -->
-    <div style="width: 220px; text-align: left;">
-      <div style="position: relative;">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=500&q=80" style="width: 100%; border-radius: 8px;" />
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 50%; padding: 10px;">
-          <img src="https://img.icons8.com/ios-filled/50/play--v1.png" style="width: 20px;" />
-        </div>
-      </div>
-      <h4 style="margin: 0.5rem 0;">Diagonal Smile</h4>
-      <p style="font-size: 0.85rem; color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div style="display: flex; align-items: center; margin-top: 0.5rem;">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" style="width: 25px; border-radius: 50%; margin-right: 0.5rem;" />
-        <span style="font-size: 0.85rem;">Philip Massey</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 0.5rem; color: #999;">
-        <span>⭐️⭐️⭐️⭐️⭐️</span>
-        <span>8 min</span>
-      </div>
-    </div>
-
-    <!-- Repeat Card for Sad Smile -->
-    <div style="width: 220px; text-align: left;">
-      <div style="position: relative;">
-        <img src="https://images.unsplash.com/photo-1598971324799-e256cce03f91?fit=crop&w=500&q=80" style="width: 100%; border-radius: 8px;" />
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 50%; padding: 10px;">
-          <img src="https://img.icons8.com/ios-filled/50/play--v1.png" style="width: 20px;" />
-        </div>
-      </div>
-      <h4 style="margin: 0.5rem 0;">Sad Smile</h4>
-      <p style="font-size: 0.85rem; color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div style="display: flex; align-items: center; margin-top: 0.5rem;">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" style="width: 25px; border-radius: 50%; margin-right: 0.5rem;" />
-        <span style="font-size: 0.85rem;">Philip Massey</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 0.5rem; color: #999;">
-        <span>⭐️⭐️⭐️⭐️⭐️</span>
-        <span>8 min</span>
-      </div>
-    </div>
-
-    <!-- Natural Smile -->
-    <div style="width: 220px; text-align: left;">
-      <div style="position: relative;">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=500&q=80" style="width: 100%; border-radius: 8px;" />
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 50%; padding: 10px;">
-          <img src="https://img.icons8.com/ios-filled/50/play--v1.png" style="width: 20px;" />
-        </div>
-      </div>
-      <h4 style="margin: 0.5rem 0;">Natural Smile</h4>
-      <p style="font-size: 0.85rem; color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div style="display: flex; align-items: center; margin-top: 0.5rem;">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" style="width: 25px; border-radius: 50%; margin-right: 0.5rem;" />
-        <span style="font-size: 0.85rem;">Philip Massey</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 0.5rem; color: #999;">
-        <span>⭐️⭐️⭐️⭐️⭐️</span>
-        <span>8 min</span>
-      </div>
-    </div>
-
-    <!-- Happy Smile -->
-    <div style="width: 220px; text-align: left;">
-      <div style="position: relative;">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=500&q=80" style="width: 100%; border-radius: 8px;" />
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 50%; padding: 10px;">
-          <img src="https://img.icons8.com/ios-filled/50/play--v1.png" style="width: 20px;" />
-        </div>
-      </div>
-      <h4 style="margin: 0.5rem 0;">Happy Smile</h4>
-      <p style="font-size: 0.85rem; color: #555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div style="display: flex; align-items: center; margin-top: 0.5rem;">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" style="width: 25px; border-radius: 50%; margin-right: 0.5rem;" />
-        <span style="font-size: 0.85rem;">Philip Massey</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 0.5rem; color: #999;">
-        <span>⭐️⭐️⭐️⭐️⭐️</span>
-        <span>8 min</span>
-      </div>
-    </div>
-
-  </div>
-</section>
+/* Responsive */
+@media (max-width: 768px) {
+  .profiles {
+    flex-wrap: wrap;
+  }
+}
