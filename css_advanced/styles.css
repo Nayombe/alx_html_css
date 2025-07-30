@@ -120,3 +120,52 @@ body {
     flex-wrap: wrap;
   }
 }
+.testimonial-section {
+  background-color: #b366ff; /* Purple background */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  color: white;
+  max-width: 500px;
+}
+
+.quote {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.role {
+  font-style: italic;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
