@@ -344,4 +344,51 @@ body {
   color: #555;
   line-height: 1.6;
 }
+.footer {
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.footer-center {
+  text-align: center;
+  flex: 1;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-right a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #a55eea;
+}
 
