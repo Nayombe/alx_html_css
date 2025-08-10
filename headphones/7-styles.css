@@ -1,1 +1,333 @@
-ECHO is on.
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --color-primary: #FF6565;
+  --color-bg-hero: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6));
+  --max-width: 1000px;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: transparent;
+  padding: 20px 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo::before {
+  content: '🏠';
+  color: var(--color-primary);
+  margin-right: 5px;
+}
+
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+  color: var(--color-primary);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: var(--color-bg-hero), url('https://media.istockphoto.com/id/638590224/photo/beautiful-young-woman-lying-on-sofa-listening-music-with-headphones.jpg?s=1920x1080&v=1&c=UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5U=') center/cover no-repeat;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-primary);
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-cta:hover,
+.btn-cta:active {
+  opacity: 0.9;
+}
+
+/* ===== WHAT WE DO SECTION ===== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  color: #ccc;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.feature-item {
+  padding: 20px;
+}
+
+.feature-item .icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+/* ===== OUR RESULTS SECTION ===== */
+  .results-section {
+    background-color: #111; /* Darker background for contrast */
+  }
+
+  .results-section .feature-item h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+
+  .results-section .icon {
+    font-size: 3rem;
+  }
+/* ===== CONTACTS SECTION ===== */
+  .contact-section {
+    background-color: #0f0f0f;
+  }
+
+  .contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--color-primary);
+    background-color: #111;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 101, 101, 0.5);
+  }
+
+  .contact-form button {
+    width: 100%;
+    cursor: pointer;
+  }
+
+/* Small bounce animation on button hover */
+  .contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 101, 101, 0.4);
+  }
+/* ===== FOOTER ===== */
+  .site-footer {
+    background-color: #0f0f0f;
+    padding: 40px 20px;
+    color: #ccc;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  .footer-logo::before {
+    content: '🎧';
+    color: var(--color-primary);
+    margin-right: 5px; 
+  }
+
+  .footer-nav {
+    margin-bottom: 15px;
+  }
+
+  .footer-nav a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+    color: #777;
+  }
+/* ===== ANIMATIONS FOR FEATURES & RESULTS ===== */
+
+/* Fade + slide in effect */
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+/* Bounce scale on hover */
+  @keyframes hoverBounce {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.06); }
+    60%  { transform: scale(0.98); }
+    100% { transform: scale(1); }
+  }
+
+/* Apply entrance animation */
+  .features-grid .feature-item {
+    opacity: 0;
+    animation: fadeSlideUp 0.7s ease forwards;
+  }
+
+/* Stagger the items for a nicer effect */
+  .features-grid .feature-item:nth-child(1) { animation-delay: 0.1s; }
+  .features-grid .feature-item:nth-child(2) { animation-delay: 0.25s; }
+  .features-grid .feature-item:nth-child(3) { animation-delay: 0.4s; }
+  .features-grid .feature-item:nth-child(4) { animation-delay: 0.55s; }
+
+/* Hover effect */
+  .features-grid .feature-item:hover {
+    animation: hoverBounce 0.4s ease;
+    cursor: pointer;
+  }
+
+/* Optional: make icons spin slightly on hover */
+  .features-grid .feature-item:hover .icon {
+    transform: rotate(8deg);
+    transition: transform 0.3s ease;
+  }
+
+}
+
+
