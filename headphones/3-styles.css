@@ -1,139 +1,241 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Headphones Landing Page</title>
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- Holberton School Icon Font -->
-  <link rel="stylesheet" href="holberton_school-icon/style.css">
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+}
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+/* ===== VARIABLES ===== */
+:root {
+  --color-primary: #FF6565;
+  --color-bg-hero: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6));
+  --max-width: 1000px;
+}
 
-<body>
+/* ===== LAYOUT ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="container">
-      <div class="logo">HEADPHONEZ</div>
-      <nav class="main-nav">
-        <a href="#">What we do</a>
-        <a href="#">Results</a>
-        <a href="#">Contact us</a>
-      </nav>
-    </div>
-  </header>
+/* ===== HEADER ===== */
+.site-header {
+  background: transparent;
+  padding: 20px 0;
+}
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero">
-    <div class="container">
-      <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
-      <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set amet</p>
-      <a href="#" class="btn-cta">Call to Action</a>
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-    </div>
-  </section>
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  <!-- ===== WHAT WE DO SECTION ===== -->
-  <section class="section features">
-    <div class="container">
-      <h2 class="section-title">What we do...</h2>
-      <p class="section-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
 
-      <div class="features-grid">
-        <div class="feature-item">
-          <span class="icon holberton_school-icon-ic_sound"></span>
-          <h3>Audio Excellence</h3>
-          <p>High-quality sound design and engineering to deliver crystal-clear audio experiences.</p>
-        </div>
+.logo::before {
+  content: '🏠';
+  color: var(--color-primary);
+  margin-right: 5px;
+}
 
-        <div class="feature-item">
-          <span class="icon holberton_school-icon-ic_video"></span>
-          <h3>Visual Harmony</h3>
-          <p>Seamless integration of visuals and audio for a captivating multimedia journey.</p>
-        </div>
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
 
-        <div class="feature-item">
-          <span class="icon holberton_school-icon-ic_music"></span>
-          <h3>Music Production</h3>
-          <p>Original tracks and compositions tailored for every mood and purpose.</p>
-        </div>
+.main-nav a:hover,
+.main-nav a:active {
+  color: var(--color-primary);
+}
 
-        <div class="feature-item">
-          <span class="icon holberton_school-icon-ic_headphones"></span>
-          <h3>Headphone Technology</h3>
-          <p>Innovative hardware for immersive personal audio experiences.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ===== OUR RESULTS SECTION ===== -->
-  <section class="section results-section">
-    <div class="container">
-    <h2 class="section-title">Our results speak for themselves</h2>
-    <p class="section-intro">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-    </p>
+/* ===== HERO SECTION ===== */
+.hero {
+  background: var(--color-bg-hero), url('https://media.istockphoto.com/id/638590224/photo/beautiful-young-woman-lying-on-sofa-listening-music-with-headphones.jpg?s=1920x1080&v=1&c=UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5U=') center/cover no-repeat;
+  text-align: center;
+  padding: 100px 20px;
+}
 
-    <div class="features-grid">
-      <div class="feature-item">
-        <div class="icon">📈</div>
-        <h3>+250%</h3>
-        <p>Increase in conversions from our strategies.</p>
-      </div>
-      <div class="feature-item">
-        <div class="icon">🚀</div>
-        <h3>4x</h3>
-        <p>Faster product launch times with our workflows.</p>
-      </div>
-      <div class="feature-item">
-        <div class="icon">💡</div>
-        <h3>98%</h3>
-        <p>Client satisfaction rate across all projects.</p>
-      </div>
-      <div class="feature-item">
-        <div class="icon">🌍</div>
-        <h3>35+</h3>
-        <p>Countries reached through our campaigns.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===== CONTACT SECTION ===== -->
-<section class="section contact-section">
-  <div class="container">
-    <h2 class="section-title">Contact us</h2>
-    <p class="section-intro">
-      Have a question or want to work with us? Fill out the form below and we’ll get back to you soon.
-    </p>
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-    <form class="contact-form" id="contactForm">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn-cta">Send Message</button>
-    </form>
-  </div>
-</section>
-</body>
-</html>
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
 
+.description {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-primary);
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-cta:hover,
+.btn-cta:active {
+  opacity: 0.9;
+}
+
+/* ===== WHAT WE DO SECTION ===== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  color: #ccc;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.feature-item {
+  padding: 20px;
+}
+
+.feature-item .icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+/* ===== OUR RESULTS SECTION ===== */
+  .results-section {
+    background-color: #111; /* Darker background for contrast */
+  }
+
+  .results-section .feature-item h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+
+  .results-section .icon {
+    font-size: 3rem;
+  }
+/* ===== CONTACTS SECTION ===== */
+  .contact-section {
+    background-color: #0f0f0f;
+  }
+
+  .contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--color-primary);
+    background-color: #111;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 101, 101, 0.5);
+  }
+
+  .contact-form button {
+    width: 100%;
+    cursor: pointer;
+  }
+
+/* Small bounce animation on button hover */
+  .contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 101, 101, 0.4);
+  }
+}
 
 
