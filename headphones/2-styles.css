@@ -1,1 +1,198 @@
-ECHO is on.
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --color-primary: #FF6565;
+  --color-bg-hero: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6));
+  --max-width: 1000px;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background: transparent;
+  padding: 20px 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo::before {
+  content: '🏠';
+  color: var(--color-primary);
+  margin-right: 5px;
+}
+
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+  color: var(--color-primary);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: var(--color-bg-hero), url('https://media.istockphoto.com/id/638590224/photo/beautiful-young-woman-lying-on-sofa-listening-music-with-headphones.jpg?s=1920x1080&v=1&c=UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5U=') center/cover no-repeat;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-primary);
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-cta:hover,
+.btn-cta:active {
+  opacity: 0.9;
+}
+
+/* ===== WHAT WE DO SECTION ===== */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  color: #ccc;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.feature-item {
+  padding: 20px;
+}
+
+.feature-item .icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+/* ===== OUR RESULTS SECTION ===== */
+  .results-section {
+    background-color: #111; /* Darker background for contrast */
+  }
+
+  .results-section .feature-item h3 {
+    font-size: 2rem;
+    color: var(--color-primary);
+  }
+
+  .results-section .icon {
+    font-size: 3rem;
+  }
+}
+
+
+
