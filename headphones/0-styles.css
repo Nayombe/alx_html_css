@@ -1,97 +1,133 @@
- /*===== CSS RESET =====*/
- *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
- }
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-body { 
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: #0a0a0a;
-    color: #fff;
-    line-height: 1.6;
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
 }
-* ===== VARIABLES ===== */
+
+/* ===== VARIABLES ===== */
 :root {
-    --color-primary: #FF65655;
-    --color-big-hero: linear-gradient(rgba(10,10,0.6), rgba(10,10,0.6)),
-    --max-width: 1000px;
+  --color-primary: #FF6565;
+  --color-bg-hero: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6));
+  --max-width: 1000px;
 }
-/*===== STYLES =====*/
+
+/* ===== LAYOUT ===== */
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
 }
-/*===== HEADER =====*/
+
+/* ===== HEADER ===== */
 .site-header {
-    background: transparent;
-    padding: 20px
+  background: transparent;
+  padding: 20px 0;
 }
+
 .site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .logo {
-    font-weight: 700;
-    font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
+
+.logo::before {
+  content: '🏠';
+  color: var(--color-primary);
+  margin-right: 5px;
+}
+
 .main-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
 }
-/*===== HERO =====*/
+
+.main-nav a:hover,
+.main-nav a:active {
+  color: var(--color-primary);
+}
+
+/* ===== HERO SECTION ===== */
 .hero {
-    background: var(--color-bg-hero), url('../assets/hero.jpg') center/cover no-repeat;
-    text-align: center;
-    padding: 100px 20px;
+  background: var(--color-bg-hero), url('https://media.istockphoto.com/id/638590224/photo/beautiful-young-woman-lying-on-sofa-listening-music-with-headphones.jpg?s=1920x1080&v=1&c=UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5UY9pZ5U=') center/cover no-repeat;
+  text-align: center;
+  padding: 100px 20px;
 }
+
 .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
-.subtittle {
-    font-size: 1.1rem;
-    margin-bottom: 30px; 
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
+
 .description {
-    margin-top: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .btn-cta {
-    display: inline-block;
-    background-color: var(--color-primary);
-    padding: 15px 30px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 25px;
-    transition: opacity 0.3s ease;
+  display: inline-block;
+  background-color: var(--color-primary);
+  padding: 15px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
 }
+
 .btn-cta:hover,
 .btn-cta:active {
-    opacity: 0.9;
+  opacity: 0.9;
 }
-/*===== Responsive =====*/
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
-    .site-header .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .main-nav {
-        margin-top: 10px;
-    }
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-    .subtittle { 
-        font-size: 1rem;
-    }
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
